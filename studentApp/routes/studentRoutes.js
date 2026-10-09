@@ -2,10 +2,10 @@
 const express = require("express");
 const router = express.Router();
 
-// Empty student data
+
 let students = [];
 
-// GET --> Read all students
+// GET Read all students
 router.get("/read", (req, res) => {
   try {
     res.status(200).send(students);
@@ -14,7 +14,7 @@ router.get("/read", (req, res) => {
   }
 });
 
-// GET --> Read a particular student
+// GET  Read student by id
 router.get("/:id", (req, res) => {
   try {
     const student = students.find((el) => el.id == req.params.id);
@@ -29,7 +29,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
-// POST --> Create a new student
+// POST Create a new student
 router.post("/create", (req, res) => {
   try {
     const payload = req.body;
@@ -54,7 +54,7 @@ router.post("/create", (req, res) => {
   }
 });
 
-// PUT --> Update complete student data
+// PUT Update complete student data
 router.put("/:id", (req, res) => {
   try {
     const payload = req.body;
@@ -88,7 +88,7 @@ router.put("/:id", (req, res) => {
   }
 });
 
-// DELETE --> Delete a student
+// DELETE Delete a student
 router.delete("/:id", (req, res) => {
   try {
     const id = req.params.id;

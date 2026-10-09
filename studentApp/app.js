@@ -13,6 +13,6 @@ app.use((req, res) => {
   res.status(404).send({ msg: "Route not found" });
 });
 
-app.listen(8000, () => {
+app.listen(3000, () => {
   console.log("Server connected");
 });
